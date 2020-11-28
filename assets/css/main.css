@@ -1,0 +1,228 @@
+body,header,nav,ul,li,a,table,thead,tbody,th,tr,td,h1,h2,p,button,footer {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: powderblue;
+}
+
+#wrapper {
+	font-family:"Trebuchet MS", Trebuchet, Arial, Helvetica, sans-serif;
+	width: 80%;
+	margin: 0 auto;
+	border: 3px solid black;
+	background-color: white;
+}
+
+
+/*** Start Navigation area **********************************/
+header {
+	text-align: center;
+	width: 100%;
+	background-color: black;
+	margin-bottom: 1rem;
+	padding-top: 1rem;
+	padding-bottom: 1.8rem;
+	color: powderblue;
+}
+
+header h1 {
+	text-transform: uppercase;
+	margin-bottom: 2rem;
+}
+
+nav ul li {
+	display: inline;
+}
+
+nav ul li a {
+	background-color: coral;
+	padding: .7rem;
+	color: black;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+nav ul li a:hover {
+	background-color: olivedrab;
+	color: white;
+}
+/*** End Navigation area **********************************/
+
+/*** Start Main contents area *****************************/
+body h1 {
+	text-transform: uppercase;
+	padding: 2rem auto 2rem auto;
+	border-bottom: 1px solid #000;
+}
+
+body h2 {
+	text-transform: uppercase;
+	margin: 1rem 2rem;
+	font-family: Consolas, monospace;
+	font-family: 13px;
+}
+
+body p {
+	margin: 1rem 2rem;
+	font-family: Consolas, monospace;
+	font-family: 13px;
+}
+
+/*** List data by using table format ********************/
+table {
+	width: 95%;
+	border-top: 1px solid #444444;
+	border-collapse: collapse;
+	margin: 2rem auto 2rem auto;
+}
+
+th, td {
+	border-bottom: 1px solid #444444;
+	padding: 1rem;
+	text-align: center;
+}
+
+thead tr {
+	background-color: #191a1b;
+	color: #ffffff;
+}
+
+tbody tr:nth-child(2n) {
+	background-color: rgb(161, 217, 252);
+}
+
+tbody tr:nth-child(2n+1) {
+	background-color: rgb(224, 240, 250);
+}
+
+/* Mobile Portrait and Landscape */
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	/* .home tbody tr .active {background: black;} */
+	
+	td { 
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		font-size: smaller;
+	}
+	
+	td:before { 
+		position: absolute;
+		top: 1em;
+		left: .1em;
+		padding: .1em;
+		width: 45%; 
+		white-space: nowrap;
+	}
+	
+
+	/* Index: Title of the data on the left side	*/
+	.home td:nth-of-type(1):before { 
+		content: "Name";
+	}
+	.home td:nth-of-type(2):before { 
+		content: "Phone"; 
+	}
+	.home td:nth-of-type(3):before { 
+		content: "Email"; 
+	}
+
+	/* Customer: Title of the data on the left side	*/
+	.customer td:nth-of-type(1):before { 
+		content: "First name";
+	}
+	.customer td:nth-of-type(2):before { 
+		content: "Last name";
+	}
+	.customer td:nth-of-type(3):before { 
+		content: "DOB"; 
+	}
+	.customer td:nth-of-type(4):before { 
+		content: "DLN"; 
+	}
+	.customer td:nth-of-type(5):before { 
+		content: "Phone"; 
+	}
+	.customer td:nth-of-type(6):before { 
+		content: "Email"; 
+	}
+}
+
+button {
+	display: flex;
+	align-items: center;
+	margin: 2rem auto;
+	padding: .5rem 1rem;
+	background-color: seagreen;
+}
+
+button a {
+	text-decoration: none;
+	color: white;
+}
+
+/***************************************************************/
+
+/*** Start Error page ******************************************/
+.error {
+  display: flex;
+	flex-wrap: wrap;
+	flex-flow: column;
+  justify-content: center;
+	align-items: center; 
+}
+
+.error p {
+	margin: 1.5em;
+	font-size: larger;
+}
+
+.error img {
+	width: 250px;
+	margin: 0 auto 3em auto;
+}
+/***************************************************************/
+
+/*** Start Footer area *****************************************/
+footer {
+	clear: both;
+	width: 100%;
+	background-color: lightslategray;
+	padding: 1rem 0 1rem 0;
+}
+
+footer p {
+  padding: .3em;
+	color: black;
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+/* Mobile Portrait and Landscape */
+@media 
+only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+  footer p {
+    font-size: .9em;
+  }
+}
+/*** End Footer area *******************************************/
